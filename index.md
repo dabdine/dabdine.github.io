@@ -14,22 +14,22 @@ CVE-2015-2659 – Oracle Java JRE AES Intrinsics Remote Denial of Service
 CVE-2016-6533 – Nine Folders Certificate Validation Vulnerability  
 
 ## Publications/References/Media credit
-https://www.engadget.com/western-digital-my-book-live-factory-reset-two-vulnerabilities-044122712.html  
-https://www.forbes.com/sites/thomasbrewster/2021/05/12/the-colonial-pipeline-hackers-are-one-of-the-savviest-criminal-startups-in-a-370-million-ransomware-game/  
-https://duo.com/decipher/attackers-target-critical-vmware-bug  
-https://www.zdnet.com/article/exploit-released-for-vmware-vulnerability-after-cisa-warning/  
-https://threatpost.com/rce-0-day-western-digital-users/167547/  
-https://www.zdnet.com/article/additional-fixes-released-addressing-apache-http-server-issue/  
-https://www.westerndigital.com/support/product-security/wdc-21012-my-cloud-os5-firmware-version-5-18-117  
-https://www.youtube.com/watch?v=Ptu41QdPLqs  
-https://blog.rapid7.com/2016/07/13/r7-2016-08-seeking-alpha-mobile-app-unencrypted-sensitive-information-disclosure/  
-https://www.theregister.co.uk/2016/09/05/cisco_extra_bacon_asa/  
-https://blog.rapid7.com/2016/10/11/r7-2016-21-nine-folders-certificate-validation-vulnerability-cve-2016-2533/  
-https://www.theregister.co.uk/2016/10/17/outlook_app_slapped_in_maninthemiddle_diddle/  
-https://blog.rapid7.com/2016/11/08/election-day-tracking-the-mirai-botnet/  
-https://searchsecurity.techtarget.com/news/450417249/Oracle-patches-Apache-Struts-exploits-Equation-Group-vulnerability  
-https://blog.rapid7.com/2018/06/07/vpnfilter-potential-reach/  
-https://information.rapid7.com/reduce-risk-exposure-cloud.html  
+<https://www.engadget.com/western-digital-my-book-live-factory-reset-two-vulnerabilities-044122712.html>  
+<https://www.forbes.com/sites/thomasbrewster/2021/05/12/the-colonial-pipeline-hackers-are-one-of-the-savviest-criminal-startups-in-a-370-million-ransomware-game/>  
+<https://duo.com/decipher/attackers-target-critical-vmware-bug>  
+<https://www.zdnet.com/article/exploit-released-for-vmware-vulnerability-after-cisa-warning/>  
+<https://threatpost.com/rce-0-day-western-digital-users/167547/>  
+<https://www.zdnet.com/article/additional-fixes-released-addressing-apache-http-server-issue/>  
+<https://www.westerndigital.com/support/product-security/wdc-21012-my-cloud-os5-firmware-version-5-18-117>  
+<https://www.youtube.com/watch?v=Ptu41QdPLqs>  
+<https://blog.rapid7.com/2016/07/13/r7-2016-08-seeking-alpha-mobile-app-unencrypted-sensitive-information-disclosure/>  
+<https://www.theregister.co.uk/2016/09/05/cisco_extra_bacon_asa/>  
+<https://blog.rapid7.com/2016/10/11/r7-2016-21-nine-folders-certificate-validation-vulnerability-cve-2016-2533/>  
+<https://www.theregister.co.uk/2016/10/17/outlook_app_slapped_in_maninthemiddle_diddle/>  
+<https://blog.rapid7.com/2016/11/08/election-day-tracking-the-mirai-botnet/>  
+<https://searchsecurity.techtarget.com/news/450417249/Oracle-patches-Apache-Struts-exploits-Equation-Group-vulnerability>  
+<https://blog.rapid7.com/2018/06/07/vpnfilter-potential-reach/>  
+<https://information.rapid7.com/reduce-risk-exposure-cloud.html>  
 
 ## Contact
 Twitter: [@dabdine](https://twitter.com/dabdine)  
