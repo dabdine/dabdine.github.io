@@ -33,6 +33,12 @@ CVE-2016-6533 – Nine Folders Certificate Validation Vulnerability
 <https://blog.rapid7.com/2018/06/07/vpnfilter-potential-reach/>  
 <https://information.rapid7.com/reduce-risk-exposure-cloud.html>  
 
+# Patents
+[US10986130B1 - Honeypot opaque credential recovery](https://patents.google.com/patent/US10986130B1/en?inventor=derek+abdine&status=GRANT)
+[US10848507B1 - Reactive virtual security appliances](https://patents.google.com/patent/US10848507B1/en?inventor=derek+abdine&status=GRANT)
+[US10826939B2 - Blended honeypot](https://patents.google.com/patent/US10826939B2/en?inventor=derek+abdine&status=GRANT)
+[US10546134B2 - Methods and systems for providing recommendations to address security vulnerabilities in a network of computing systems](https://patents.google.com/patent/US10546134B2/en?inventor=derek+abdine&status=GRANT)
+
 ## Contact
 Twitter: [@dabdine](https://twitter.com/dabdine)  
 Mail: derek.abdine/at/gmail.com [(PGP)](https://keybase.io/dabdine)  
