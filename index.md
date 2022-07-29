@@ -1,3 +1,4 @@
+<p align="center"><a href="/blog/2022-arris-advisory">Looking for the Arris advisory?</a></p>
 ## Bio
 Hello! I'm currently a co-founder and CEO of a tech startup focused on <\<REDACTED\>>.
 
