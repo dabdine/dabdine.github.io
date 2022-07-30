@@ -108,7 +108,7 @@ Certain files on Arris-based routers, such as dropbear and HTTPS RSA keys (for t
 high indicating the file is obfuscated or encrypted.</i>
 </p>
 
-However, the HTTPS private key is read by muhttpd, and reading a private key and certificate has existed in the original source code for SSL/TLS support, while the original source does not support this file format. As it would turn out, the modified muhttpd binary shipping in the firmware of these routers has the ability to deobfuscate files from this proprietary format. More specifically, the `ssl-key` parameter in the muhttpd server configuration file references the private key that must be in this format. After deobfuscating, the binary will pipe the data to `/bin/gzip` to deflate the contents to their plaintext form, then pipe the output of gzip back into its own process to set the server key:
+However, the HTTPS private key is read by muhttpd, and reading a private key and certificate has existed in the original source code for SSL/TLS support, while the original source does not support this file format. As it would turn out, **the modified/customized muhttpd binary shipping in the firmware of these routers has the ability to deobfuscate files from this proprietary format**. More specifically, the `ssl-key` parameter in the muhttpd server configuration file references the private key that must be in this format. After deobfuscating, the binary will pipe the data to `/bin/gzip` to deflate the contents to their plaintext form, then pipe the output of gzip back into its own process to set the server key:
 
 <p align="center">
 <img width="75%" src="images/image3.png"/><br/>
