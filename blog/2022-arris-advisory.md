@@ -270,7 +270,7 @@ Thus, we are left with a few methods of obtaining the salt value “C” to reco
 ```bash
 decrypt <MODEL NUMBER> \
         <WIFI PASSCODE> \
-        31 \
+        <BOARD ID> \
         "$(python -c 'import base64;print(base64.b64encode(bytes.fromhex("308203d5308202bda0030201020209" + "0" * 1940)).decode("utf-8"))')" \
         <ENCRYPTED SECRET>
 ```
