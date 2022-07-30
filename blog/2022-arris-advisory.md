@@ -103,6 +103,7 @@ A non-exhaustive list of example attack scenarios:
 Certain files on Arris-based routers, such as dropbear and HTTPS RSA keys (for the web portal and other HTTP-based services), SKU-specific configuration files, and the contents of `/etc/config.cfg` (the device configuration database) appear to be in a proprietary binary data format, with an “XMLC” header. Binwalk indicates these files have fairly high entropy, indicating obfuscation, compression or encryption:
 
 <p align="center">
+(right click/secondary select and open in a new tab to view larger)
 <img width="75%" src="images/image8.png"/><br/>
 <i>results of `binwalk -E on /etc/config.cfg` – entropy is extremely 
 high indicating the file is obfuscated or encrypted.</i>
@@ -111,6 +112,7 @@ high indicating the file is obfuscated or encrypted.</i>
 However, the HTTPS private key is read by muhttpd, and reading a private key and certificate has existed in the original source code for SSL/TLS support, while the original source does not support this file format. As it would turn out, **the modified/customized muhttpd binary shipping in the firmware of these routers has the ability to deobfuscate files from this proprietary format**. More specifically, the `ssl-key` parameter in the muhttpd server configuration file references the private key that must be in this format. After deobfuscating, the binary will pipe the data to `/bin/gzip` to deflate the contents to their plaintext form, then pipe the output of gzip back into its own process to set the server key:
 
 <p align="center">
+(right click/secondary select and open in a new tab to view larger)
 <img width="75%" src="images/image3.png"/><br/>
 <i>Normal flow for reading the https.key (obfuscated in proprietary XMLC format) for the Arris-customized muhttpd</i>
 </p>
@@ -124,6 +126,7 @@ Create a fake httpd.conf file with its `ssl-key` parameter set to the XMLC filen
 4. Set necessary file permissions, volume mounts (for the libs, muhttpd binary, fake gzip and httpd.conf file) and execute muhttpd in the container.
 
 <p align="center">
+(right click/secondary select and open in a new tab to view larger)
 <img width="75%" src="images/image6.png"/><br/>
 <i>Abusive flow for deobfuscating any file in the proprietary XMLC file format</i>
 </p>
@@ -249,12 +252,14 @@ The firmware may encrypt plaintext secrets in the `/etc/config.cfg` file (see �
 The AES 16-byte (128 bit) key is derived from two invocations of Argon2i, a modern hashing algorithm. In both phases, Argon2 is run with a t_cost of 2, memory of 4096KiB, and parallelism of 1. First, an 8-byte key salt is computed by the firmware. This salt is created by utilizing the byte stream of a DER-encoded client certificate embedded in the device at manufacture time as the password, while using a fixed 8-byte string as the salt. However, interestingly, the code copies the certificate DER byte array to a separate buffer using strlcpy() before hashing with Argon2i. **Use of `strlcpy()` effectively arbitrarily chops the client certificate bytes to the first NUL terminator encountered in the DER certificate byte array** (as the `str*cpy` functions operate on strings and consider a NUL `\x00` to be the end of a string), greatly reducing or eliminating the entropy used in the hash function:
 
 <p align="center">
+(right click/secondary select and open in a new tab to view larger)
 <img width="75%" src="images/image7.png"/>
 </p>
 
 Interestingly, this defect is similar to the [strcmp issue](https://wiibrew.org/wiki/Signing_bug) that enabled the Nintendo home brew scene, and points to a misunderstanding of the source data being used, or the effect of string operations on non-string data. The key salt is then fed into Argon2i again (this time with a hashlen of 16 bytes, corresponding to the 128-bit AES key length), with the password in this second invocation set to a computed string based on the default WiFi access code, the device serial number, and board id:
 
 <p align="center">
+(right click/secondary select and open in a new tab to view larger)
 <img width="75%" src="images/image4.png"/>
 </p>
 
@@ -284,6 +289,7 @@ In the event the serial number is not stored in this format, the NUL may come in
 Thus, the answer is yes: **It is possible to recover the plaintext remote administration password and pin for the device, as well as the SIP and ISP CWMP passwords used for the particular customer over the Internet if they are encrypted**, though with varying degrees of difficulty, as depicted by this chart:
 
 <p align="center">
+(right click/secondary select and open in a new tab to view larger)
 <img width="75%" src="images/image1.png"/><br/>
 </p>
 
