@@ -1,6 +1,6 @@
 <p align="center"><a href="/blog/2022-arris-advisory">Looking for the Arris advisory?</a></p>
 ## Bio
-Hello! I'm currently a co-founder and CEO of a tech startup focused on <\<REDACTED\>>.
+Hello! I'm currently Cofounder and CEO of a tech startup focused on <\<REDACTED\>>.
 
 I started in tech & cybersecurity in my teens building and reversing software and hardware, and using that information for the benefit of positive outcomes in cybersecurity. I have reported issues both privately and publicly to several Fortune 500 companies. I've published several CVEs, and I've directly developed innovations in LAN/Internet scanning/asset inventory, cybersecurity data science, honeypotting, and vulnerability management over the past 16 years. I've been to the White House to discuss the state of cybersecurity trends at the intersection of the US and global economy (related research was subsequently published in the [2019 Economic Report to the President](https://www.govinfo.gov/content/pkg/ERP-2019/pdf/ERP-2019.pdf)). I've been in senate buildings in Washington, D.C. to discuss carve-outs for legitimate cybersecurity research with respect to ancient laws such as the CFAA. I currently hold 5 patents in cybersecurity. Previously, I held the role of CTO at Censys and Head of Labs at Rapid7.
 
