@@ -1,2 +1,10 @@
 theme: jekyll-theme-slate
 title: Derek Abdine
+description: Cybersecurity researcher, entrepreneur, and engineer.
+url: https://derekabdine.com
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

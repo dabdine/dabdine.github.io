@@ -1,4 +1,16 @@
-# Arris / Arris-variant DSL/Fiber router critical vulnerability exposure
+---
+layout: default
+title: Arris Router Critical Vulnerability Advisory - Derek Abdine
+---
+
+<div class="post-header">
+<div class="container">
+<a href="/" class="post-back">&larr; Back</a>
+<h1>Arris / Arris-variant DSL/Fiber Router Critical Vulnerability Exposure</h1>
+</div>
+</div>
+<div class="post-content">
+<div class="container" markdown="1">
 
 **NOTE: This issue has been patched and deployed by at least one ISP, whose BGW routers use a customized variant of Arris NVG firmware.**
 
@@ -350,4 +362,5 @@ Internet Service Providers (ISPs) around the world typically loan these routers 
 
 Though no evidence of active exploitation exists, it is best to create an action plan that assumes a subscriber (residential or commercial) has been compromised due to the length of time the vulnerability has existed. Subscribers can mitigate any potential *future* impact by limiting access to the administration portal (typically at http(s)://192.168.1.254/) on the LAN and WAN (e.g., by placing untrusted guests on a separate guest network without the administration portal exposed, and by disabling the ability to access the portal from the Internet).
 
-
+</div>
+</div>
