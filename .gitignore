@@ -1,0 +1,6 @@
+_site/
+.claude/
+.DS_Store
+.bundle/
+vendor/
+*.gem
