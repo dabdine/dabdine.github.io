@@ -43,6 +43,23 @@
       --border-subtle: #161622;
     }
 
+    [data-theme="light"] {
+      --bg: #f5f5f7;
+      --bg-elevated: #ebebef;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f0f0f4;
+      --text: #1a1a2e;
+      --text-secondary: #4a4a68;
+      --text-muted: #7a7a96;
+      --accent: #0077b6;
+      --accent-glow: rgba(0, 119, 182, 0.06);
+      --accent-border: rgba(0, 119, 182, 0.25);
+      --purple: #7c3aed;
+      --purple-glow: rgba(124, 58, 237, 0.06);
+      --border: #d8d8e0;
+      --border-subtle: #e6e6ee;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -72,6 +89,9 @@
       -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border-subtle);
     }
+    [data-theme="light"] .nav {
+      background: rgba(245, 245, 247, 0.85);
+    }
     .nav .container {
       display: flex;
       justify-content: space-between;
@@ -96,6 +116,31 @@
     .nav-links a:hover { color: var(--accent); opacity: 1; }
 
     .nav-toggle { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 0.5rem; }
+
+    /* ── Theme Toggle ── */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      margin-left: 0.75rem;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent-border);
+      color: var(--accent);
+      background: var(--accent-glow);
+    }
+    .theme-toggle svg { width: 16px; height: 16px; }
+    .theme-toggle .icon-sun { display: none; }
+    .theme-toggle .icon-moon { display: block; }
+    [data-theme="light"] .theme-toggle .icon-sun { display: block; }
+    [data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
     /* ── Hero ── */
     .hero {
@@ -484,6 +529,9 @@
         gap: 0.75rem;
         border-bottom: 1px solid var(--border-subtle);
       }
+      [data-theme="light"] .nav-links.open {
+        background: rgba(245, 245, 247, 0.97);
+      }
       .pub-source { width: 80px; font-size: 0.65rem; }
       .post-header h1 { font-size: 1.5rem; }
       .contact-grid { flex-direction: column; }
@@ -512,6 +560,10 @@
         <a href="/#publications">Press</a>
         <a href="/#contact">Contact</a>
       </div>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
     </div>
   </nav>
 
@@ -523,5 +575,16 @@
     </div>
   </footer>
 
+  <script>
+    function toggleTheme() {
+      var t = document.documentElement.getAttribute('data-theme') === 'light' ? '' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('theme', t || 'dark');
+    }
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
 </body>
 </html>
